@@ -80,8 +80,8 @@ data "aws_caller_identity" "current" {}
 
 # Main VPC Peering connection module
 module "myvpcpeering" {
-  source = "voquis/vpc-peering-connection/aws"
-  version = 0.0.1
+  source  = "voquis/vpc-peering-connection/aws"
+  version = "0.0.2"
 
   peer_owner_id           = data.aws_caller_identity.current.account_id
   vpc_id                  = module.private_vpc.vpc.id
